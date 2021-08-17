@@ -9,11 +9,11 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y \
   doxygen \
   git \
   liblz4-dev=1.9.2-2ubuntu0.20.04.1 \
-  libssl-dev=1.1.1f-1ubuntu2.4 \
+  libssl-dev=1.1.1f-1ubuntu2.5 \
   ninja-build=1.10.0-1build1 \
   zlib1g-dev=1:1.2.11.dfsg-2ubuntu1.2
 
-ARG erttag=v0.2.6 edbtag=v0.1.0
+ARG erttag=master edbtag=test/new-grpc
 RUN git clone -b $erttag --depth=1 https://github.com/edgelesssys/edgelessrt \
   && git clone -b $edbtag --depth=1 https://github.com/edgelesssys/edgelessdb \
   && mkdir ertbuild edbbuild
