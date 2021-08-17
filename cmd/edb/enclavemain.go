@@ -19,6 +19,7 @@ package main
 
 import (
 	"flag"
+	"log"
 	"os"
 	"path"
 	"path/filepath"
@@ -41,6 +42,8 @@ func main() {
 			panic(err)
 		}
 	}
+
+	log.Println([]byte(os.Getenv("DO_I_BREAK")))
 
 	config := core.Config{
 		DataPath:           "data",
